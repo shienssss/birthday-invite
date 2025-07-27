@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shhh..keep this web secret please</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #fffff0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: auto;
+      color: #5c4a4a;
+    }
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+    }
+    input[type="text"],
+    textarea {
+      padding: 10px;
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #f8c8dc;
+      margin-top: 15px;
+      font-size: 16px;
+      font-family: 'Quicksand', sans-serif;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #fddde6;
+      color: #5c4a4a;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #f8c8dc;
+    }
+    .hidden {
+      display: none;
+    }
+    .page {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 400px;
+    }
+    .button-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+      position: relative;
+    }
+    #noBtn {
+      position: relative;
+      transition: top 0.3s, left 0.3s;
+    }
+    #warning {
+      margin-top: 10px;
+      color: #c94d4d;
+      font-weight: 600;
+      display: none;
+    }
+    #page3 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 60px 16px 80px;
+      box-sizing: border-box;
+    }
+
+    .custom-upload {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .custom-upload label {
+      padding: 10px 20px;
+      background-color: #fddde6;
+      color: #5c4a4a;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .custom-upload label:hover {
+      background-color: #f8c8dc;
+    }
+    .custom-upload input[type="file"] {
+      display: none;
+    }
+    #fileNameDisplay {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #6a5d5d;
+    }
+    textarea {
+      margin-top: 20px;
+      padding: 10px;
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #f8c8dc;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="page1" class="page">
+    <div class="container">
+      <h1>HEYY MY LOVE SAYANG</h1>
+      <p>Enter your name to begin:</p>
+      <input type="text" id="nameInput" placeholder="Your name..." />
+      <button onclick="goToPage2()">Enter</button>
+    </div>
+  </div>
+
+  <div id="page2" class="page hidden">
+    <div class="container">
+      <h2 id="invitationText"></h2>
+      <h3>Beomgyu's gf's Sweet 17 Mamam</h3>
+      <p>if you love me, you should come :></p>
+      <p>
+        📍 Sentosa Seafood<br />
+        <a href="https://maps.app.goo.gl/Jeh2PTeQHvjhv9Yd7" target="_blank" style="color: #d77d92; font-weight: 600;">Click here for the location details🌍</a><br />
+        🗓️ 7 September 2025<br />
+        🕔 5.30 PM - 9.30 PM
+      </p>
+      <button onclick="goToPage3()">See Details</button>
+    </div>
+  </div>
+
+  <div id="page3" class="page hidden">
+    <div class="container" id="details" style="flex-direction: column; justify-content: flex-start; padding-top: 60px;">
+      <h2 style="margin-bottom: 16px; color: #5c4a4a; font-size: 24px;">🎀 Notes 🎀</h2>
+      <ul style="text-align: left; padding: 0 20px; color: #6a5d5d; font-size: 16px; max-width: 400px;">
+        <li>No need to bring a gift — just bring yourself on <strong>7 September!</strong></li>
+        <li>Don't break the dress code or you'll be kicked</li>
+        <li>Theme: Whisper of springs</li>
+        <li><strong>Dresscode:</strong> yellow or pink pastel 🌸</li>
+      </ul>
+      <img src="color.jpg" alt="Dresscode Palette" style="margin-top: 20px; max-width: 80%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+      <h2>💖 What We'll Do 💖</h2>
+      <ul style="text-align: left; padding: 0 20px; color: #6a5d5d;">
+        <li>📸 Take many cute photos and videos together (so make sure to dress up nicely)</li>
+        <li>🍽️ Mukbang</li>
+        <li>🫶 Hug and laugh</li>
+        <li>🕵️‍♀️ MINI GAMES !!</li>
+      </ul>
+      <div class="button-group">
+        <button onclick="goToPage4()">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="page4" class="page hidden">
+    <div class="container">
+      <h2>WOULD YOU LIKE TO COME???</h2>
+      <p>Please choose an answer:</p>
+      <div class="button-group" id="answerGroup">
+        <button onclick="goToPage5()">Yes</button>
+        <button id="noBtn" onmouseover="moveNoButton()" onclick="denyNo()">No</button>
+      </div>
+      <div id="warning">No, you can't choose that!</div>
+    </div>
+  </div>
+
+  <div id="page5" class="page hidden">
+    <div class="container">
+      <h2>WOO I LOVE YOU CAYANK 💖</h2>
+      <p>Please upload ur fav photo with me</p>
+      <div class="custom-upload">
+        <label for="fileInput">📷 Upload Photo/Video</label>
+        <input type="file" id="fileInput" accept="image/*,video/*" onchange="showFileName()" />
+        <div id="fileNameDisplay"></div>
+      </div>
+
+      <button onclick="submitToServer(event)" type="button">Submit</button>
+
+    </div>
+  </div>
+
+  <div id="page6" class="page hidden">
+    <div class="container">
+      <h2>AWWW SAYANG!</h2>
+      <p>See you on <strong>7 September</strong>! 💖</p>
+    </div>
+  </div> 
+
+  <script src="main.js"></script> 
+  
+  <script>
+    function goToPage2() {
+      const name = document.getElementById("nameInput").value;
+      if (name.trim() !== "") {
+        document.getElementById("page1").classList.add("hidden");
+        document.getElementById("page2").classList.remove("hidden");
+        document.getElementById("invitationText").innerText = `${name} is invited to`;
+      }
+    }
+
+    function goToPage3() {
+      document.getElementById("page2").classList.add("hidden");
+      document.getElementById("page3").classList.remove("hidden");
+    }
+
+    function goToPage4() {
+      document.getElementById("page3").classList.add("hidden");
+      document.getElementById("page4").classList.remove("hidden");
+    }
+
+    function goToPage5() {
+      document.getElementById("page4").classList.add("hidden");
+      document.getElementById("page5").classList.remove("hidden");
+    }
+
+    function moveNoButton() {
+      const noBtn = document.getElementById("noBtn");
+      const parent = document.getElementById("answerGroup");
+      const maxX = parent.offsetWidth - noBtn.offsetWidth;
+      const maxY = parent.offsetHeight - noBtn.offsetHeight;
+      const newX = Math.random() * maxX;
+      const newY = Math.random() * maxY;
+      noBtn.style.position = "absolute";
+      noBtn.style.left = `${newX}px`;
+      noBtn.style.top = `${newY}px`;
+    }
+
+    function denyNo() {
+      document.getElementById("noBtn").style.display = "none";
+      document.getElementById("warning").style.display = "block";
+    }
+
+    function submitResponse() {
+      const file = document.getElementById("fileInput").files[0];
+
+      if (!file) {
+        alert("Please upload a file.");
+        return;
+      }
+
+      document.getElementById("submitStatus").style.display = "block";
+      document.getElementById("fileInput").disabled = true;
+    }
+
+    function showFileName() {
+      const fileInput = document.getElementById("fileInput");
+      const fileNameDisplay = document.getElementById("fileNameDisplay");
+
+      if (fileInput.files.length > 0) {
+        fileNameDisplay.textContent = `Selected: ${fileInput.files[0].name}`;
+      } else {
+        fileNameDisplay.textContent = "";
+      }
+    }
+
+    function goToPage6() {
+      document.getElementById("page5").classList.add("hidden");
+      document.getElementById("page6").classList.remove("hidden");
+    }
+
+
+ async function submitToServer(event) {
+  event.preventDefault();
+
+  const fileInput = document.getElementById("fileInput");
+  const file = fileInput.files[0];
+
+  if (!file) {
+    alert("Please upload a file.");
+    return false;
+  }
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  try {
+    const response = await fetch("http://localhost:3000/upload", {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.text();
+    console.log("✅ Upload success:", data);
+    console.log("📦 File is ready. Switching page...");
+
+    goToPage6();
+  } catch (error) {
+    console.error("❌ Upload error:", error);
+    alert("Upload failed!");
+  }
+
+  return false;
+}
+
+
+
+    
+  </script>
+</body>
+</html>
+
+  }
